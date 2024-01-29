@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Reqnroll.MsTest" Version="1.0.0-pre20240125-60" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReqnrollQuickstart.App\ReqnrollQuickstart.App.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- hiding .gitkeep files in Visual Studio; they are only needed to ensure the existence of the empty folders in git -->
+    <None Update="**/.gitkeep" Visible="false" />
+  </ItemGroup>
+
+</Project>
