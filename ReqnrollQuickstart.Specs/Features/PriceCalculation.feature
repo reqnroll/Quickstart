@@ -13,3 +13,12 @@ Scenario: Client has a simple basket
     And the client added 1 pcs of "Electric guitar" to the basket
     When the basket is prepared
     Then the basket price should be $180.0
+
+Scenario: Client has multiple items in their basket
+    Given the client started shopping
+    And the client added
+        | product         | quantity |
+        | Electric guitar | 1        |
+        | Guitar pick     | 10       |
+    When the basket is prepared
+    Then the basket price should be $195.0
