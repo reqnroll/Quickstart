@@ -20,6 +20,16 @@ public class PriceCalculationStepDefinitions
         _basket.Add(product, quantity);
     }
 
+    [Given("the client added")]
+    public void GivenTheClientAdded(DataTable itemsTable)
+    {
+        var items = itemsTable.CreateSet<(string Product, int Quantity)>();
+        foreach (var item in items)
+        {
+            _basket.Add(item.Product, item.Quantity);
+        }
+    }
+
     [When("the basket is prepared")]
     public void WhenTheBasketIsPrepared()
     {
